@@ -1,0 +1,85 @@
+
+/* styles.css - Shared for all Murel ICT webpages */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background-color: #005792;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #003f6b;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 30px;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #003f6b;
+  color: white;
+  margin-top: 30px;
+}
+
+h2 {
+  color: #005792;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #005792;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00486a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  section {
+    padding: 20px;
+  }
+  .active-link {
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: underline;
+  }
+  
+}

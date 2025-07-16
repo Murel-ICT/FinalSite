@@ -1,0 +1,19 @@
+# Ignore Visual Studio settings and generated files
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio folders
+.vs/
+
+# Build results
+bin/
+obj/
+
+# Extensions & dev tools
+.vscode/
+.vscode/extensions/
+
