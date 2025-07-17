@@ -53,12 +53,57 @@
     <p>👉 <strong>Ready to start?</strong> 
       <a href="mailto:ict@murel.co.za" class="cta-button">Contact us today</a>
     </p>
-  </section>
 
-  <footer>
-    &copy; 2025 Murel ICT (Pty) Ltd. All Rights Reserved.
-  </footer>
+    <!--  actual form-->
+     <form id="contactForm" method="POST">
+  <label for="name">Your Name:</label><br />
+  <input type="text" id="name" name="name" required><br /><br />
 
-  <script src="script.js"></script>
+  <label for="email">Your Email:</label><br />
+  <input type="email" id="email" name="email" required><br /><br />
+
+  <label for="message">Your Message:</label><br />
+  <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+  <button type="submit">Send Message</button>
+</form>
+
+<div id="responseMessage"></div>
+</section>
+
+<footer>
+  &copy; 2025 Murel ICT (Pty) Ltd. All Rights Reserved.
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const formData = { name, email, message };
+
+    try {
+      const response = await fetch('http://localhost:3000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      document.getElementById('responseMessage').innerText = result.message || 'Message sent successfully!';
+      this.reset();
+    } catch (error) {
+      document.getElementById('responseMessage').innerText = 'Failed to send message. Please try again.';
+      console.error('Error:', error);
+    }
+  });
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
